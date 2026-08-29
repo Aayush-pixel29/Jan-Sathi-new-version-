@@ -32,7 +32,7 @@ export default function StatusTimeline({ statusHistory, currentStatus, translati
                 <CircleDot className="w-6 h-6 text-blue-600 shrink-0 animate-pulse" />
               )}
               {isPending && (
-                <Circle className="w-6 h-6 text-gray-300 shrink-0" />
+                <Circle className="w-6 h-6 text-gray-500 shrink-0" />
               )}
               {index < ALL_STATUSES.length - 1 && (
                 <div
@@ -46,7 +46,7 @@ export default function StatusTimeline({ statusHistory, currentStatus, translati
             {/* Content */}
             <div className={`pb-6 ${isPending ? 'opacity-40' : ''}`}>
               <p className={`font-semibold text-sm ${
-                isCurrent ? 'text-blue-700' : isCompleted ? 'text-emerald-700' : 'text-gray-400'
+                isCurrent ? 'text-blue-700' : isCompleted ? 'text-emerald-700' : 'text-gray-500'
               }`}>
                 {status}
               </p>

@@ -33,7 +33,7 @@ export default function HomePage() {
   if (checkingAuth || !isAuth) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-blue-50 flex items-center justify-center">
-        <div className="animate-pulse text-gray-400">Loading...</div>
+        <div className="animate-pulse text-gray-500">Loading...</div>
       </div>
     );
   }
@@ -48,7 +48,7 @@ export default function HomePage() {
           </div>
           <div>
             <h1 className="text-xl font-bold text-gray-900">Jan Sathi</h1>
-            <p className="text-xs text-gray-400">AI Grievance Companion</p>
+            <p className="text-xs text-gray-600">AI Grievance Companion</p>
           </div>
         </div>
       </div>
@@ -58,13 +58,13 @@ export default function HomePage() {
         <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-5 text-white">
           <div className="flex items-center gap-2 mb-2">
             <Sparkles className="w-4 h-4 text-blue-200" />
-            <span className="text-xs font-medium text-blue-200">Powered by AI</span>
+            <span className="text-xs font-medium text-blue-100">Powered by AI</span>
           </div>
           <h2 className="text-lg font-bold mb-1">
             Government complaint?
           </h2>
           <p className="text-sm text-blue-100 leading-relaxed">
-            Describe your problem in your own words. Jan Sathi handles the bureaucracy — classifies, drafts, tracks, and escalates for you.
+            Tell us what happened. We&apos;ll help you get it resolved.
           </p>
         </div>
       </div>
@@ -82,13 +82,13 @@ export default function HomePage() {
                 <PenLine className="w-5 h-5 text-blue-600" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 text-sm">File a Complaint</h3>
-                <p className="text-xs text-gray-500 mt-1 leading-relaxed">
+                <h3 className="font-semibold text-gray-900 text-sm">File a Complaint · शिकायत दर्ज करें</h3>
+                <p className="text-xs text-gray-600 mt-1 leading-relaxed">
                   Describe your issue in Hindi, English, or Hinglish. AI will classify and draft a formal grievance for you.
                 </p>
               </div>
             </div>
-            <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-blue-500 transition-colors shrink-0 mt-1" />
+            <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors shrink-0 mt-1" />
           </div>
         </button>
 
@@ -103,21 +103,21 @@ export default function HomePage() {
                 <Search className="w-5 h-5 text-emerald-600" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 text-sm">Track a Complaint</h3>
-                <p className="text-xs text-gray-500 mt-1 leading-relaxed">
-                  Check your complaint status in plain language. Get alerts if your grievance is stalled past SLA.
+                <h3 className="font-semibold text-gray-900 text-sm">Track a Complaint · स्थिति जाँचें</h3>
+                <p className="text-xs text-gray-600 mt-1 leading-relaxed">
+                  Check your complaint status in plain language. Get alerts if your grievance is stalled.
                 </p>
               </div>
             </div>
-            <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-emerald-500 transition-colors shrink-0 mt-1" />
+            <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-emerald-500 transition-colors shrink-0 mt-1" />
           </div>
         </button>
       </div>
 
       {/* Footer */}
       <div className="px-4 py-4 text-center">
-        <p className="text-[10px] text-gray-300">
-          Built for Build What Moves India · Hackathon Prototype · Not affiliated with any government body
+        <p className="text-xs text-gray-500">
+          Not affiliated with or endorsed by any government body
         </p>
       </div>
     </div>

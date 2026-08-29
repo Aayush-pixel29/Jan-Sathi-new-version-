@@ -55,7 +55,7 @@ export default function SuccessPage() {
             className="w-full py-3.5 bg-blue-600 text-white rounded-xl font-medium text-sm hover:bg-blue-700 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
           >
             <Search className="w-4 h-4" />
-            Track This Complaint
+            Track This Complaint · ?????? ??????
           </Link>
           <Link
             href="/file"

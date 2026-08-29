@@ -37,7 +37,7 @@ export default function TrackPage() {
         <p className="text-sm text-gray-500 mb-4">Enter your tracking ID to check the current status.</p>
 
         <div className="relative">
-          <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-gray-500 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             placeholder="JS-20260829-XXXX"

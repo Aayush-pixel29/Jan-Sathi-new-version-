@@ -6,7 +6,7 @@ import { CheckCircle2, Copy, Search, Check } from 'lucide-react';
 
 export default function SuccessPage() {
   const router = useRouter();
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<{ tracking_id: string; status: string; message: string } | null>(null);
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function SuccessPage() {
 
   if (!result) return null;
 
-  const trackingId = result.grievance?.tracking_id || 'JS-ERROR';
+  const trackingId = result.tracking_id || 'JS-ERROR';
 
   const copyId = () => {
     navigator.clipboard.writeText(trackingId);

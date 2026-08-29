@@ -20,10 +20,20 @@ export async function GET(
       return NextResponse.json({ error: 'No grievance found with this tracking ID' }, { status: 404 });
     }
 
-    // Get AI translation for each status in history
+    // Get AI translation for each status in history (with caching)
     const translations: Record<string, { explanation: string; next_steps: string; estimated_wait: string }> = {};
 
     for (const entry of grievance.status_history) {
+      // Check if we already cached the translation for this status entry
+      if (entry.explanation) {
+        try {
+          translations[entry.status] = JSON.parse(entry.explanation);
+          continue;
+        } catch {
+          // If parsing fails, fall through to regenerate
+        }
+      }
+
       try {
         const result = await statusModel.generateContent([
           STATUS_PROMPT,
@@ -31,6 +41,9 @@ export async function GET(
         ]);
         const parsed = JSON.parse(result.response.text());
         translations[entry.status] = parsed;
+        
+        // Cache the result back into the in-memory store so it doesn't fire again
+        entry.explanation = JSON.stringify(parsed);
       } catch {
         translations[entry.status] = {
           explanation: `Your grievance is currently in "${entry.status}" stage.`,

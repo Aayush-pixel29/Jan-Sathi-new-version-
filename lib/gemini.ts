@@ -3,7 +3,7 @@ import { GoogleGenerativeAI, SchemaType } from '@google/generative-ai';
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
 export const classifyModel = genAI.getGenerativeModel({
-  model: 'gemini-2.0-flash',
+  model: 'gemini-3.6-flash',
   generationConfig: {
     responseMimeType: 'application/json',
     responseSchema: {
@@ -54,7 +54,7 @@ export const classifyModel = genAI.getGenerativeModel({
 });
 
 export const statusModel = genAI.getGenerativeModel({
-  model: 'gemini-2.0-flash',
+  model: 'gemini-3.6-flash',
   generationConfig: {
     responseMimeType: 'application/json',
     responseSchema: {
@@ -70,7 +70,7 @@ export const statusModel = genAI.getGenerativeModel({
 });
 
 export const escalationModel = genAI.getGenerativeModel({
-  model: 'gemini-2.0-flash',
+  model: 'gemini-3.6-flash',
   generationConfig: {
     responseMimeType: 'application/json',
     responseSchema: {
